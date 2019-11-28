@@ -25,9 +25,12 @@ public class Player : MonoBehaviour
 
         bool estouAndando = direcao.magnitude != 0;
         this.controleAnimacao.SetBool("estaAndando", estouAndando);
-        this.controleAnimacao.SetFloat("velocidadeY", direcao.y);
-        this.controleAnimacao.SetFloat("velocidadeX", direcao.x);
+        
 
-
+        if (estouAndando){
+            this.controleAnimacao.SetFloat("velocidadeY", direcao.y);
+            this.controleAnimacao.SetFloat("velocidadeX", direcao.x);
+        }
+     
     }
 }
